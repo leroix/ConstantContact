@@ -85,8 +85,8 @@ class Connection:
         CRLF = u'\r\n'
 
         if self.access_token:
-            args.update({'access_token': self.access_token})
-        
+            headers['Authorization'] = 'Bearer ' + self.access_token
+
         if filename and body:
             #fn = open(filename ,'r')
             #chunks = fn.read()
