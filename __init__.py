@@ -56,13 +56,14 @@ class CTCTConnection:
     #constantcontact namespace
     NS_CTCT = 'http://ws.constantcontact.com/ns/1.0/'
     
-    def __init__(self, api_key, username, password):
+    def __init__(self, api_key, username, password, access_token):
         self.username = username 
+        self.access_token = access_token
         login_username = api_key + "%" + username
         
         connection_base = CTCTConnection.API_BASE_URL + username + "/"
         
-        self.connection = Connection(connection_base, username=login_username, password=password)
+        self.connection = Connection(connection_base, username=login_username, password=password, access_token)
 
     def verify_credentials(self):
         """ Returns whether or not the apikey, username and password the object was initialized are valid """

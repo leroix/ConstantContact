@@ -35,9 +35,10 @@ import mimetypes
 from cStringIO import StringIO
 
 class Connection:
-    def __init__(self, base_url, username=None, password=None):
+    def __init__(self, base_url, username=None, password=None, access_token=None):
         self.base_url = base_url
         self.username = username
+        self.access_token = access_token
         m = mimeTypes()
         self.mimetypes = m.getDictionary()
         
@@ -82,6 +83,9 @@ class Connection:
         
         BOUNDARY = u'00hoYUXOnLD5RQ8SKGYVgLLt64jejnMwtO7q8XE1'
         CRLF = u'\r\n'
+
+        if self.access_token:
+            args.update({'access_token': self.access_token})
         
         if filename and body:
             #fn = open(filename ,'r')
