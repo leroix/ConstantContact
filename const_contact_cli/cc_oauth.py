@@ -27,7 +27,7 @@ class CC_OAuth(object):
 
     def authenticate(self, code):
         response = {}
-        resp, content = self.client.request(self.mc_access_token_uri,
+        resp, content = self.client.request(self.cc_access_token_uri,
                         'POST', self._params(code))
         response.update(json.loads(content))
 
@@ -35,4 +35,4 @@ class CC_OAuth(object):
 
     def authorize_url(self):
         return u'%s?response_type=code&client_id=%s' % (
-           self.mc_authorize_uri, self.client_id)
+           self.cc_authorize_uri, self.client_id)
