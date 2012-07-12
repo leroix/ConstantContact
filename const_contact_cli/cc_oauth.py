@@ -34,5 +34,5 @@ class CC_OAuth(object):
         return response
 
     def authorize_url(self):
-        return u'%s?response_type=code&client_id=%s' % (
-           self.cc_authorize_uri, self.client_id)
+        return u'%s?response_type=code&client_id=%s&redirect_uri=%s' % (
+           self.cc_authorize_uri, self.client_id, self.redirect_uri)
