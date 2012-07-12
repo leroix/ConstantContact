@@ -63,7 +63,7 @@ class CTCTConnection:
         
         connection_base = CTCTConnection.API_BASE_URL + username + "/"
         
-        self.connection = Connection(connection_base, username=login_username, password=password, access_token)
+        self.connection = Connection(connection_base, username=login_username, password=password, access_token=access_token)
 
     def verify_credentials(self):
         """ Returns whether or not the apikey, username and password the object was initialized are valid """
