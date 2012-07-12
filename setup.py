@@ -11,7 +11,7 @@ setup(
     license='LICENSE.txt',
     description='Constant Contact api clent',
     long_description=open('README.txt').read(),
-    install_requires=[
-        "oauth2 >= 1.5.211",
-    ],
+#    install_requires=[
+#        "oauth2 >= 1.5.211",
+#    ],
 )
