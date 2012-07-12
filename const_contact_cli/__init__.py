@@ -56,7 +56,7 @@ class CTCTConnection:
     #constantcontact namespace
     NS_CTCT = 'http://ws.constantcontact.com/ns/1.0/'
     
-    def __init__(self, api_key=None, username, password=None, access_token=None):
+    def __init__(self, api_key=None, username=None, password=None, access_token=None):
         self.username = username 
         self.access_token = access_token
         login_username = api_key + "%" + username
