@@ -1,4 +1,5 @@
 import json
+import certifi
 import oauth2 as oauth
 from urllib import quote
 
@@ -12,6 +13,7 @@ class CC_OAuth(object):
         self.redirect_uri = quote(redirect_uri, '')
         self.client = oauth.Client(oauth.Consumer(key=self.client_id,
                        secret=self.client_secret))
+        self.client.ca_certs = certifi.where()
 
         if not self.client_id:
             raise ImproperlyConfigured("Missing Key settings.")
