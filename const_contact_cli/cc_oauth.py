@@ -7,9 +7,9 @@ class CC_OAuth(object):
     cc_authorize_uri = 'https://oauth2.constantcontact.com/oauth2/oauth/siteowner/authorize'
     cc_access_token_uri = 'https://oauth2.constantcontact.com/oauth2/oauth/token'
 
-    def __init__(self, settings, redirect_uri, *args, **kwargs):
-        self.client_id = getattr(settings, 'CC_KEY', None)
-        self.client_secret = getattr(settings, 'CC_SECRET', None)
+    def __init__(self, cc_key, cc_secret, redirect_uri, *args, **kwargs):
+        self.client_id = cc_key
+        self.client_secret = cc_secret
         self.redirect_uri = quote(redirect_uri, '')
         self.client = oauth.Client(oauth.Consumer(key=self.client_id,
                        secret=self.client_secret))
