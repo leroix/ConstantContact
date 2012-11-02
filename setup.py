@@ -3,7 +3,7 @@ from setuptools import find_packages
 
 setup(
     name='ConstantContact',
-    version='0.1.0',
+    version='0.1.1',
     author='Justin Ratner',
     author_email='justin@rafflecopter.com',
     packages=find_packages(),
