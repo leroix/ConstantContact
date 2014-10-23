@@ -97,7 +97,7 @@ class CTCTConnection:
         
         # Build an XML Tree from the return
         #xml = ET.fromstring(response['body'])
-        xml = ET.fromstring(response['body'].encode('ascii','xmlcharrefreplace'))
+        xml = ET.fromstring(response['body'].encode('utf8','xmlcharrefreplace'))
         
         # Check if there is a next link
         links = xml.findall('{http://www.w3.org/2005/Atom}link');
